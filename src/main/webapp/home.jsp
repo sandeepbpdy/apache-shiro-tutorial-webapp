@@ -24,7 +24,54 @@
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap-theme.min.css">
 </head>
 <body>
-    <h1>Hello, world!</h1>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Apache Shiro Tutorial Webapp</h1>
+            <p class="lead">Enhanced with DICOM Image Reading Capabilities</p>
+            <hr>
+            <p>This application demonstrates Apache Shiro security features and includes DICOM server connectivity for medical image processing.</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">DICOM Image Viewer</h3>
+                    </div>
+                    <div class="panel-body">
+                        <p>Connect to DICOM servers and view medical images.</p>
+                        <ul>
+                            <li>Test DICOM server connectivity</li>
+                            <li>Search for patient studies</li>
+                            <li>Retrieve and display DICOM images</li>
+                            <li>View DICOM metadata</li>
+                        </ul>
+                        <a href="<%= request.getContextPath() %>/dicom/viewer" class="btn btn-primary btn-lg">
+                            Open DICOM Viewer
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Configuration</h3>
+                    </div>
+                    <div class="panel-body">
+                        <p>Configure DICOM server connection using system properties:</p>
+                        <ul>
+                            <li><code>-Ddicom.server.hostname=your-server</code></li>
+                            <li><code>-Ddicom.server.port=11112</code></li>
+                            <li><code>-Ddicom.calling.aet=WEBAPP</code></li>
+                            <li><code>-Ddicom.called.aet=DCMSERVER</code></li>
+                        </ul>
+                        <p><small>Default configuration connects to localhost:11112</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery.js"></script>
