@@ -28,14 +28,35 @@ A web application that demonstrates Apache Shiro security features enhanced with
 ### Prerequisites
 - Java 8 or higher
 - Maven 3.x
-- Access to a DICOM server (for testing)
+- Docker (for DICOM server)
 
-### Build and Run
+### Complete Setup (5 minutes)
 
-1. **Clone and build the project:**
+1. **Start DICOM Server (Orthanc):**
    ```bash
-   git clone <repository-url>
-   cd apache-shiro-webapp-tutorial
+   ./start-orthanc-server.sh
+   ```
+   Wait until you see "Orthanc has started" message.
+
+2. **In a new terminal, upload sample DICOM data:**
+   ```bash
+   ./setup-sample-data.sh
+   ```
+
+3. **In another terminal, start your web application:**
+   ```bash
+   ./build-and-run.sh
+   ```
+
+4. **Access the applications:**
+   - **Your Web App**: http://localhost:8080
+   - **DICOM Viewer**: http://localhost:8080/dicom/viewer
+   - **Orthanc Web Interface**: http://localhost:8042 (orthanc/orthanc)
+
+### Manual Build and Run
+
+1. **Build the project:**
+   ```bash
    mvn clean package
    ```
 
